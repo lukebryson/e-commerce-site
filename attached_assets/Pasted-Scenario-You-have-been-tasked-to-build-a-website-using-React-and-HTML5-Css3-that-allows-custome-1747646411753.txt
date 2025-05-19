@@ -1,0 +1,52 @@
+Scenario 
+You have been tasked to build a website using React and HTML5, Css3 that allows 
+customers to:  
+➢ Selected a product that are available for purchase into their shopping basket 
+➢ Adjust the quantity of a product they order 
+➢ Place an order for their basket by providing their customer information 
+Install the database 
+1- Use the productsJsonServer.json file to install an API that exposes a list of 
+product details. 
+The API will contain information about the products with the following 
+attributes shown below as an example: 
+{ 
+"id": 1, 
+"ProductName": "Chai", 
+"UnitPrice": 18, 
+"UnitsInStock": 39, 
+"Suppliers": [ 
+{ 
+"CompanyName": "Exotic Liquids" 
+} 
+] 
+} 
+The root name is products 
+Design the website 
+2- Use a JSON server to create an API for the products. 
+3- Create a welcome page with some interesting detail about your company! Any 
+information will do but you have an opportunity to add some of the interesting 
+effects which we discussed during the course. 
+4- Create a link on the Welcome page to show a list of products. You will need to 
+call your Jason server API to get the list.  Display only the ProductName and 
+UnitPrice using a list. You may choose any design you like. You can use 
+active links, buttons, icons… beside each product in order to select that 
+product. 
+5- When a product is selected, it is added to a shopping basket 
+Tip: use localStorage to add a Shopping basket Item.  
+You may need to create a class for this object.   
+6- If the same item is selected the quantity of the item is increased by 1. 
+7- Customers should not be able to order more items than we have in stock (see 
+the UnitsInStock attribute) 
+8- Make sure users are informed of any update to their order. 
+9- Create a link to the customer's shopping basket.  
+The link should not be active when the shopping basket is empty 
+10- When the shopping basket is displayed, allow the customer to increase or 
+decrease quantity ordered. Remove the item if the quantity is zero. 
+11- Don't forget to display the total basket cost when displaying the basket details. 
+12- Create a link on the shopping basket to buy more products. 
+13- Create a link on the shopping basket to pay. You will not implement any 
+payment.  
+14- Shopping basket is cleared when the customer pays for the items. 
+Don't forget to adjust the UnitsInStock attribute for each shopping basket item  
+15- As an optional step you may ask the customers for their name and address. 
+16- As another optional step, you may want to save details of any paid order. 
