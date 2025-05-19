@@ -1,0 +1,92 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "ProductName": "Chai",
+      "UnitPrice": 18,
+      "UnitsInStock": 39,
+      "Suppliers": [
+        {
+          "CompanyName": "Exotic Liquids"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "ProductName": "Aniseed Syrup",
+      "UnitPrice": 10,
+      "UnitsInStock": 13,
+      "Suppliers": [
+        {
+          "CompanyName": "Exotic Liquids"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "ProductName": "Chef Anton's Seasoning",
+      "UnitPrice": 22,
+      "UnitsInStock": 53,
+      "Suppliers": [
+        {
+          "CompanyName": "New Orleans Cajun Delights"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "ProductName": "Grandma's Boysenberry Spread",
+      "UnitPrice": 25,
+      "UnitsInStock": 120,
+      "Suppliers": [
+        {
+          "CompanyName": "Grandma Kelly's Homestead"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "ProductName": "Singapore Noodles",
+      "UnitPrice": 14,
+      "UnitsInStock": 32,
+      "Suppliers": [
+        {
+          "CompanyName": "Leka Trading"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "ProductName": "Gnocchi di nonna Alice",
+      "UnitPrice": 38,
+      "UnitsInStock": 21,
+      "Suppliers": [
+        {
+          "CompanyName": "Pasta Buttini s.r.l."
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "ProductName": "Organic Earl Grey Tea",
+      "UnitPrice": 15,
+      "UnitsInStock": 45,
+      "Suppliers": [
+        {
+          "CompanyName": "Specialty Teas Ltd"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "ProductName": "Aged Parmesan Cheese",
+      "UnitPrice": 32,
+      "UnitsInStock": 18,
+      "Suppliers": [
+        {
+          "CompanyName": "Italian Delicacies"
+        }
+      ]
+    }
+  ]
+}
