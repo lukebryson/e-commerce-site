@@ -7,7 +7,7 @@ A full-stack TypeScript project that shows a lightweight shopping workflow:
 * Local JSON “database” – no external DB required
 * **React-Query** for fetching, Context + `localStorage` for the basket
 
-> Built for a 1-day assessment, so the code is intentionally compact and easy to follow.
+> Built over a 4 hour period, so the code is intentionally compact and easy to follow.
 
 ---
 
