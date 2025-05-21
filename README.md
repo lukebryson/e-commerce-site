@@ -1,146 +1,108 @@
-ShopEase – E‑commerce Demo
+# ShopEase – E-commerce Demo
 
-A full‑stack TypeScript project that demonstrates a simple e‑commerce workflow:
+A full-stack TypeScript project that shows a lightweight shopping workflow:
 
-React + Vite client with Tailwind CSS UI components
+* **React + Vite** client styled with Tailwind
+* **Express** API (TypeScript + tsx) that also serves the compiled client
+* Local JSON “database” – no external DB required
+* **React-Query** for fetching, Context + `localStorage` for the basket
 
-Express REST API (TypeScript, tsx) that serves the compiled client and a JSON‑based product catalogue
+> Built for a 1-day assessment, so the code is intentionally compact and easy to follow.
 
-Local JSON “database” (productsJsonServer.json) – no external DB required
+---
 
-React‑Query for data fetching, Context + localStorage for basket state
+## Features
 
-Built during a one‑day assessment – code is intentionally concise and easy to follow.
+| Area          | What’s implemented                                                |
+| ------------- | ----------------------------------------------------------------- |
+| Browse items  | Responsive grid with stock count                                  |
+| Basket        | Add/Remove, quantity guard vs. stock, persisted in `localStorage` |
+| Checkout      | Dummy **Pay** button clears basket & decrements stock             |
+| Order history | Can be toggled on (saved to `localStorage`)                       |
+| Dev UX        | Hot-reload via Vite (client) + Nodemon (API)                      |
 
-Features
+---
 
-Area
+## Tech Stack
 
-What’s implemented
+* **Client:** React 18, Vite, TypeScript, Tailwind, React-Query, Radix UI, Lucide icons
+* **Server:** Node 20, Express 5, `tsx` runtime, Drizzle ORM (future)
+* **Tooling:** Cross-env, Nodemon, npm scripts
 
-Browse products
+---
 
-Grid of items, stock count, responsive design
+## Prerequisites
 
-Basket
+| Software | Version                  |
+| -------- | ------------------------ |
+| Node.js  | 18 + (tested on 20.19.2) |
+| npm      | 9 +                      |
 
-Add / remove, quantity guard vs. stock, persisted in localStorage
+---
 
-Checkout
+## Getting Started
 
-Dummy “pay” button that clears basket & decrements stock
-
-Order history
-
-Saved paid orders in localStorage (optional – see TODO)
-
-Dev UX
-
-Hot‑reload via Vite & Nodemon
-
-Tech Stack
-
-Client: React 18, Vite, TypeScript, Tailwind CSS, React‑Query, Radix UI,
-Lucide‑React icons
-
-Server: Node 20, Express 5, tsx runtime, Drizzle ORM (future db work)
-
-Tooling: Cross‑env, Nodemon, npm scripts
-
-Prerequisites
-
-Software
-
-Version
-
-Node.js
-
-18 or newer (tested on 20.19.2)
-
-npm
-
-9 or newer
-
-Getting Started
-
-# 1 – clone & install deps (≈ 1 min)
-git clone <repo‑url> shopease
+```bash
+# 1 – clone & install
+git clone <repo-url> shopease
 cd shopease
 npm install
 
-# 2 – run the dev workflow with hot‑reload
+# 2 – run dev workflow with hot-reload
 npm run dev
-# client → http://localhost:5173
-# api    → http://localhost:5000/api/products
+# client  👉 http://localhost:5173
+# api     👉 http://localhost:5000/api/products
+```
 
-Windows note (cross‑env)
+#### Windows note
 
-Windows shells can’t parse NODE_ENV=value inline.
-All scripts use cross-env so they work everywhere – no extra steps required.
+All scripts use **cross-env**, so `NODE_ENV=…` works fine in PowerShell, Git Bash, CMD, etc.
 
-NPM Scripts
+---
 
-Script
+## npm Scripts
 
-What it does
+| Script  | Purpose                                                                |
+| ------- | ---------------------------------------------------------------------- |
+| `dev`   | Runs Vite client **and** Nodemon-watched API concurrently              |
+| `build` | Bundles client (`vite build`) **and** server (`esbuild`) to `dist/`    |
+| `start` | Serves production build – `node dist/index.js` (defaults to port 5000) |
+| `check` | Type-checks client & server (`tsc --noEmit`)                           |
 
-dev
+> Change the runtime port with `PORT=4000 npm start`.
 
-Runs Vite client and Nodemon‑watched API concurrently
+---
 
-build
+## Folder Structure (top-level)
 
-Bundles client (vite build) and server (esbuild) to dist/
+```
+client/                      React front-end (src/ contains pages, components, hooks…)
+server/                      Express API (index.ts entry)
+shared/                      Zod schema reused by both sides
+productsJsonServer.json      Local “DB” seed
+```
 
-start
+---
 
-Serves production build – node dist/index.js (default port 5000)
+## API Routes
 
-check
+| Method | Endpoint        | Description            |
+| ------ | --------------- | ---------------------- |
+| GET    | `/api/products` | All products           |
+| POST   | `/api/orders`   | Persist order *(TODO)* |
 
-Type checks both client & server (tsc --noEmit)
+---
 
-Change the runtime port with PORT=4000 npm start (server code picks up process.env.PORT).
+## TODO / Nice-to-haves
 
-Folder Structure (top‑level)
+* Persist orders in a real DB (Drizzle + SQLite)
+* Auth & user accounts
+* Replace hard-coded image map with `product.image`
+* Unit tests (Vitest + RTL)
+* CI pipeline (GitHub Actions)
 
-client/          # React front‑end (src/ contains components, pages, hooks…)
-server/          # Express API (index.ts entry)
-shared/          # Zod schema reused by both sides
-productsJsonServer.json   # local “DB” seed
+---
 
-API Routes (dev & prod)
+## Licence
 
-Method
-
-Endpoint
-
-Description
-
-GET
-
-/api/products
-
-All products
-
-POST
-
-/api/orders TODO
-
-Persist paid order
-
-TODO / Nice‑to‑haves
-
-Persist orders to a real DB (Drizzle + SQLite)
-
-Auth & user accounts
-
-Image handling via product image field instead of hard‑coded map
-
-Unit tests (Vitest + React Testing Library)
-
-CI pipeline (GitHub Actions)
-
-Licence
-
-MIT © 2025 ShopEase Demo
+MIT © 2025 ShopEase Demo
